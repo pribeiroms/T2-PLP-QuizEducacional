@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Executar Quiz Educacional",
+      "request": "launch",
+      "mainClass": "br.com.quiz.educacional.Main",
+      "projectName": "T2-PLP-QuizEducacional"
+    }
+  ]
+}
+
