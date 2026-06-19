@@ -38,6 +38,8 @@ git commit -m "chore(setup): configurar estrutura inicial do projeto #1"
 ```jsx
 PR:
 
+Título: #1 Configurar Projeto e Estrutura Inicial
+
 ## O que foi feito
 
 - Criação do repositório GitHub
@@ -49,6 +51,9 @@ PR:
 ## Objetivo
 
 Preparar o ambiente e a estrutura necessária para o desenvolvimento do Quiz Educacional.
+
+---
+Closes #1
 ```
 
 ---
@@ -69,6 +74,8 @@ git commit -m "feat(oop): implementar classes base do sistema #2"
 ```jsx
 PR:
 
+Título: #2 Implementar Classes Base Orientadas a Objetos
+
 ## O que foi feito
 
 - Implementação da classe abstrata Questao
@@ -80,6 +87,9 @@ PR:
 ## Objetivo
 
 Criar as entidades principais do sistema utilizando Programação Orientada a Objetos.
+
+---
+Closes #2
 ```
 
 - [ ]  **#3 Implementar Tipos de Questão**
@@ -96,6 +106,8 @@ git commit -m "feat(question): implementar tipos de questao #3"
 ```jsx
 PR:
 
+Título: #3 Implementar Tipos de Questão
+
 ## O que foi feito
 
 - Criação das subclasses de Questao
@@ -105,6 +117,9 @@ PR:
 ## Objetivo
 
 Permitir diferentes formatos de questões reutilizando código.
+
+---
+Closes #3
 ```
 
 - [ ]  **#4 Implementar Sistema de Pontuação**
@@ -120,6 +135,8 @@ git commit -m "feat(score): implementar sistema de pontuacao #4"
 ```jsx
 PR:
 
+Título: #4 Implementar Sistema de Pontuação
+
 ## O que foi feito
 
 - Implementação do sistema de pontuação
@@ -129,6 +146,9 @@ PR:
 ## Objetivo
 
 Gerenciar a pontuação durante a execução do quiz.
+
+---
+Closes #4
 ```
 
 - [ ]  **#5 Implementar Banco de Questões**
@@ -143,6 +163,8 @@ git commit -m "feat(questions): implementar banco de questoes #5"
 ```jsx
 PR:
 
+Título: #5 Implementar Banco de Questões
+
 ## O que foi feito
 
 - Criação da estrutura de armazenamento das questões
@@ -152,6 +174,9 @@ PR:
 ## Objetivo
 
 Disponibilizar as perguntas utilizadas pelo sistema.
+
+---
+Closes #5
 ```
 
 — *feature/dev*
@@ -169,6 +194,8 @@ git commit -m "merge: integrar funcionalidades principais #12"
 ```jsx
 PR:
 
+Título: #12 Integrar Funcionalidades
+
 ## O que foi feito
 
 - Integração das funcionalidades desenvolvidas
@@ -177,6 +204,9 @@ PR:
 ## Objetivo
 
 Preparar o sistema para testes completos.
+
+---
+Closes #12
 ```
 
 ---
@@ -197,6 +227,8 @@ git commit -m "feat(functional): implementar correcao automatica #6"
 ```jsx
 PR:
 
+Título: #6 Implementar Correção Automática
+
 ## O que foi feito
 
 - Implementação da contagem de acertos
@@ -206,6 +238,9 @@ PR:
 ## Objetivo
 
 Automatizar a correção das respostas utilizando Programação Funcional.
+
+---
+Closes #6
 ```
 
 - [ ]  **#7 Implementar Relatório de Desempenho**
@@ -221,6 +256,8 @@ git commit -m "feat(report): implementar relatorio de desempenho #7"
 ```jsx
 PR:
 
+Título: #7 Implementar Relatório de Desempenho
+
 ## O que foi feito
 
 - Criação do relatório de desempenho
@@ -230,6 +267,9 @@ PR:
 ## Objetivo
 
 Apresentar ao usuário seu desempenho no quiz.
+
+---
+Closes #7
 ```
 
 - [ ]  **#8 Aplicar Recursos Funcionais**
@@ -246,6 +286,8 @@ git commit -m "feat(functional): aplicar recursos funcionais #8"
 ```jsx
 PR:
 
+Título: #8 Aplicar Recursos Funcionais
+
 ## O que foi feito
 
 - Aplicação de Streams
@@ -255,6 +297,9 @@ PR:
 ## Objetivo
 
 Demonstrar a aplicação do paradigma funcional no projeto.
+
+---
+Closes #8
 ```
 
 ---
@@ -277,6 +322,8 @@ git commit -m "feat(menu): implementar menu principal #9"
 ```jsx
 PR:
 
+Título: #9 Implementar Menu Principal
+
 ## O que foi feito
 
 - Criação da classe principal
@@ -286,6 +333,9 @@ PR:
 ## Objetivo
 
 Permitir a interação do usuário com o sistema.
+
+---
+Closes #9
 ```
 
 - [x]  **#10 Implementar Fluxo do Quiz**
@@ -302,6 +352,8 @@ git commit -m "feat(flow): implementar fluxo do quiz #10"
 ```jsx
 PR:
 
+Título: #10 Implementar Fluxo do Quiz
+
 ## O que foi feito
 
 - Leitura de dados pelo teclado
@@ -312,6 +364,9 @@ PR:
 ## Objetivo
 
 Executar o fluxo principal utilizando Programação Imperativa.
+
+---
+Closes #10
 ```
 
 - [x]  **#11 Implementar Modo Desafio Contra o Tempo**
@@ -327,6 +382,8 @@ git commit -m "feat(timer): implementar modo desafio #11"
 ```jsx
 PR:
 
+Título: #11 Implementar Modo Desafio Contra o Tempo
+
 ## O que foi feito
 
 - Criação da classe Temporizador
@@ -336,6 +393,9 @@ PR:
 ## Objetivo
 
 Aplicar Programação Concorrente utilizando Threads.
+
+---
+Closes #11
 ```
 
 ```markdown
