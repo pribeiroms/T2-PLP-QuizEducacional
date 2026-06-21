@@ -1,7 +1,6 @@
 package br.com.quiz.educacional.imperativo;
 
-import java.util.Scanner;
-
+import br.com.quiz.educacional.concorrente.EntradaConsole;
 import br.com.quiz.educacional.modelo.Quiz;
 import br.com.quiz.educacional.modelo.SessaoJogador;
 import br.com.quiz.educacional.modelo.Usuario;
@@ -11,11 +10,11 @@ import br.com.quiz.educacional.relatorio.RelatorioDesempenho;
  * Menu de navegação do Quiz Educacional.
  */
 public class MenuPrincipal {
-    private final Scanner scanner;
+    private final EntradaConsole entrada;
     private RelatorioDesempenho ultimoResultado;
 
-    public MenuPrincipal(Scanner scanner) {
-        this.scanner = scanner;
+    public MenuPrincipal(EntradaConsole entrada) {
+        this.entrada = entrada;
     }
 
     public void exibirMenu() {
@@ -31,7 +30,10 @@ public class MenuPrincipal {
             System.out.println("3 - Sair");
             System.out.print("Escolha uma opção: ");
 
-            String opcao = scanner.nextLine();
+            String opcao = entrada.lerLinha();
+            if (opcao == null) {
+                return;
+            }
 
             switch (opcao.trim()) {
                 case "1" -> iniciarQuiz();
@@ -47,16 +49,16 @@ public class MenuPrincipal {
 
     private void iniciarQuiz() {
         System.out.print("Digite seu nome: ");
-        String nome = scanner.nextLine();
+        String nome = entrada.lerLinha();
 
-        if (nome.isBlank()) {
+        if (nome == null || nome.isBlank()) {
             nome = "Jogador";
         }
 
         Usuario usuario = new Usuario(nome);
         Quiz quiz = new Quiz("Quiz Educacional");
         SessaoJogador sessao = new SessaoJogador(usuario, quiz);
-        GameLoop gameLoop = new GameLoop(scanner, sessao);
+        GameLoop gameLoop = new GameLoop(entrada, sessao);
         ultimoResultado = gameLoop.iniciar();
     }
 
