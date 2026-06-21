@@ -2,12 +2,17 @@ package br.com.quiz.educacional.imperativo;
 
 import java.util.Scanner;
 
+import br.com.quiz.educacional.modelo.Quiz;
+import br.com.quiz.educacional.modelo.SessaoJogador;
+import br.com.quiz.educacional.modelo.Usuario;
+import br.com.quiz.educacional.relatorio.RelatorioDesempenho;
+
 /**
- * Menu principal de navegação do Quiz Educacional.
+ * Menu de navegação do Quiz Educacional.
  */
 public class MenuPrincipal {
     private final Scanner scanner;
-    private String ultimoResultado;
+    private RelatorioDesempenho ultimoResultado;
 
     public MenuPrincipal(Scanner scanner) {
         this.scanner = scanner;
@@ -26,9 +31,9 @@ public class MenuPrincipal {
             System.out.println("3 - Sair");
             System.out.print("Escolha uma opção: ");
 
-            String opcao = scanner.nextLine().trim();
+            String opcao = scanner.nextLine();
 
-            switch (opcao) {
+            switch (opcao.trim()) {
                 case "1" -> iniciarQuiz();
                 case "2" -> visualizarResultado();
                 case "3" -> {
@@ -41,15 +46,25 @@ public class MenuPrincipal {
     }
 
     private void iniciarQuiz() {
-        System.out.println("Iniciando quiz...");
-        ultimoResultado = null;
+        System.out.print("Digite seu nome: ");
+        String nome = scanner.nextLine();
+
+        if (nome.isBlank()) {
+            nome = "Jogador";
+        }
+
+        Usuario usuario = new Usuario(nome);
+        Quiz quiz = new Quiz("Quiz Educacional");
+        SessaoJogador sessao = new SessaoJogador(usuario, quiz);
+        GameLoop gameLoop = new GameLoop(scanner, sessao);
+        ultimoResultado = gameLoop.iniciar();
     }
 
     private void visualizarResultado() {
         if (ultimoResultado == null) {
-            System.out.println("Nenhum resultado disponível.");
+            System.out.println("Nenhum quiz foi concluído nesta execução.");
         } else {
-            System.out.println(ultimoResultado);
+            ultimoResultado.exibir();
         }
     }
 }
