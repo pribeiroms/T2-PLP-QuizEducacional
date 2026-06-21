@@ -1,5 +1,9 @@
 package br.com.quiz.educacional;
 
+import java.util.Scanner;
+
+import br.com.quiz.educacional.imperativo.MenuPrincipal;
+
 /**
  * Ponto de entrada do Quiz Educacional.
  */
@@ -9,7 +13,9 @@ public final class Main {
     }
 
     public static void main(String[] args) {
-        System.out.println("Quiz Educacional iniciado!");
+        try (Scanner scanner = new Scanner(System.in)) {
+            MenuPrincipal menu = new MenuPrincipal(scanner);
+            menu.exibirMenu();
+        }
     }
 }
-
