@@ -63,4 +63,41 @@ public class CorretorAutomatico {
 
         return (calcularPercentualAproveitamento() / 100.0) * notaMaxima;
     }
+
+    /**
+     * Lista as questões cuja resposta foi incorreta.
+     * Demonstra o uso de filter() + map() em conjunto.
+     */
+    public List<Questao> listarQuestoesErradas() {
+        return IntStream.range(0, questoes.size())
+                .filter(i -> !questoes.get(i).verificarResposta(respostas.get(i)))
+                .mapToObj(questoes::get)
+                .toList();
+    }
+
+    /**
+     * Lista os enunciados das questões respondidas corretamente.
+     * Demonstra map() transformando Questao em String.
+     */
+    public List<String> listarEnunciadosCorretos() {
+        return IntStream.range(0, questoes.size())
+                .filter(i -> questoes.get(i).verificarResposta(respostas.get(i)))
+                .mapToObj(questoes::get)
+                .map(Questao::getEnunciado)
+                .toList();
+    }
+
+    /**
+     * Conta quantas questões respondidas são de um determinado tipo.
+     * Demonstra filter() + count() sobre o stream de questões.
+     *
+     * @param tipo classe do tipo de questão (ex.: QuestaoVerdadeiroFalso.class)
+     */
+    public long contarPorTipo(Class<? extends Questao> tipo) {
+        Objects.requireNonNull(tipo, "O tipo da questão é obrigatório.");
+
+        return questoes.stream()
+                .filter(tipo::isInstance)
+                .count();
+    }
 }
