@@ -11,6 +11,9 @@ build/
 out/
 target/
 
+# Materiais locais de planejamento (não fazem parte da entrega)
+guia/
+
 # VS Code (mantém somente as configurações compartilhadas)
 .vscode/*
 !.vscode/extensions.json
@@ -30,4 +33,3 @@ target/
 # Sistema operacional
 .DS_Store
 Thumbs.db
-

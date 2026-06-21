@@ -1,6 +1,6 @@
 # Quiz Educacional
 
-Projeto desenvolvido em Java para a criação de um quiz educacional. A aplicação permitirá apresentar perguntas, validar respostas e acompanhar a pontuação do participante.
+Projeto desenvolvido em Java que apresenta perguntas, valida respostas, acompanha a pontuação do participante e gera um relatório de desempenho. O modo desafio limita cada resposta a 20 segundos usando programação concorrente.
 
 ## Requisitos
 
@@ -28,8 +28,28 @@ No VS Code, abra `src/main/java/br/com/quiz/educacional/Main.java` e use o botã
 Também é possível executar pelo terminal, a partir da raiz do projeto:
 
 ```powershell
-javac -encoding UTF-8 -d out src/main/java/br/com/quiz/educacional/Main.java
+$fontes = Get-ChildItem -Path src/main/java -Recurse -Filter *.java | ForEach-Object FullName
+javac -encoding UTF-8 -d out $fontes
 java -cp out br.com.quiz.educacional.Main
+```
+
+## Funcionalidades
+
+- Menu para iniciar o quiz, consultar o último resultado e sair
+- Questões de múltipla escolha, verdadeiro ou falso e dissertativas
+- Banco de questões e sistema de pontuação
+- Correção automática com Streams e expressões lambda
+- Relatório com acertos, erros e percentual de aproveitamento
+- Modo desafio com temporizador de 20 segundos por questão
+
+## Testes
+
+Os testes automatizados não exigem bibliotecas externas. Para executá-los:
+
+```powershell
+$fontes = Get-ChildItem -Path src/main/java,src/test/java -Recurse -Filter *.java | ForEach-Object FullName
+javac -encoding UTF-8 -d out $fontes
+java -cp out br.com.quiz.educacional.TestesAutomatizados
 ```
 
 ## Desenvolvimento
@@ -40,5 +60,4 @@ As instruções para configurar a proteção da `main` estão em [docs/PROTECAO_
 
 ## Status
 
-Estrutura inicial configurada. O desenvolvimento das funcionalidades do quiz será realizado nas próximas etapas.
-
+Funcionalidades principais implementadas e reunidas na branch de integração. A integração final com a `main` deve ser feita por pull request.

@@ -14,10 +14,11 @@ public final class Main {
     }
 
     public static void main(String[] args) {
-        try (Scanner scanner = new Scanner(System.in)) {
-            EntradaConsole entrada = new EntradaConsole(scanner);
-            MenuPrincipal menu = new MenuPrincipal(entrada);
-            menu.exibirMenu();
-        }
+        // System.in permanece aberto porque a leitura é feita por uma thread daemon.
+        // Fechar o Scanner enquanto essa thread aguarda uma linha pode bloquear a saída.
+        Scanner scanner = new Scanner(System.in);
+        EntradaConsole entrada = new EntradaConsole(scanner);
+        MenuPrincipal menu = new MenuPrincipal(entrada);
+        menu.exibirMenu();
     }
 }

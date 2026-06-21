@@ -1,7 +1,7 @@
 package br.com.quiz.educacional.modelo;
 
 /**
- * Representa um quiz que poderá receber questões nas próximas etapas.
+ * Representa um quiz identificado por um título.
  */
 public class Quiz {
     private final String titulo;
