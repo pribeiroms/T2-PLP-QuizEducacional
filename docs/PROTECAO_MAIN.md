@@ -1,6 +1,6 @@
 # Proteção da branch `main`
 
-A proteção deve ser ativada no GitHub depois que o primeiro commit for enviado, pois o repositório remoto ainda está vazio.
+A proteção deve estar ativa no GitHub antes da integração final. Como essa configuração é remota, confirme-a nas configurações do repositório antes da entrega.
 
 ## Configuração recomendada
 
@@ -14,4 +14,3 @@ A proteção deve ser ativada no GitHub depois que o primeiro commit for enviado
 8. Salve em **Create** ou **Save changes**.
 
 > A proteção é uma configuração remota do GitHub e não pode ser armazenada apenas nos arquivos do projeto.
-

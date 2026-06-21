@@ -4,13 +4,11 @@
     {
       "label": "Compilar projeto Java",
       "type": "shell",
-      "command": "javac",
+      "command": "powershell",
       "args": [
-        "-encoding",
-        "UTF-8",
-        "-d",
-        "out",
-        "src/main/java/br/com/quiz/educacional/Main.java"
+        "-NoProfile",
+        "-Command",
+        "$fontes = Get-ChildItem -Path 'src/main/java' -Recurse -Filter '*.java' | ForEach-Object FullName; javac -encoding UTF-8 -d out $fontes"
       ],
       "group": {
         "kind": "build",
@@ -20,4 +18,3 @@
     }
   ]
 }
-
