@@ -31,6 +31,9 @@ Também é possível executar pelo terminal, a partir da raiz do projeto:
 $fontes = Get-ChildItem -Path src/main/java -Recurse -Filter *.java | ForEach-Object FullName
 javac -encoding UTF-8 -d out $fontes
 java -cp out br.com.quiz.educacional.Main
+
+caso nao funcione rode:
+cd /workspaces/T2-PLP-QuizEducacional && /usr/lib/jvm/java-17-openjdk-amd64/bin/java -version && echo "---" && rm -rf out && mkdir -p out && find src/main/java -name "*.java" | sort > /tmp/sources.txt && /usr/lib/jvm/java-17-openjdk-amd64/bin/javac -encoding UTF-8 -d out $(cat /tmp/sources.txt) && /usr/lib/jvm/java-17-openjdk-amd64/bin/java -cp out br.com.quiz.educacional.Main
 ```
 
 ## Funcionalidades
